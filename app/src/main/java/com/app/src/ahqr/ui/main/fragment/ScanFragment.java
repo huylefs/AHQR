@@ -190,7 +190,7 @@ public class ScanFragment extends Fragment implements QRAdapter.OnItemClickListe
                     if (action != null && uri != null) {
                         Intent intent = new Intent(action, uri);
                         startActivity(intent);
-                    } else if (result.startsWith("MECARD:") || result.startsWith("BEGIN:VCARD")) {
+} else if (result.startsWith("MECARD:") || result.startsWith("BEGIN:VCARD")) {
                         addContact(result);
                     }
                 });
