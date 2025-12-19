@@ -56,9 +56,6 @@ The app features a custom-built QR code generation engine implementing the QR Co
 ---
 
 
-
----
-
 ## 🛠️ Tech Stack <a name="tech-stack"></a>
 
 | Category | Technology |
