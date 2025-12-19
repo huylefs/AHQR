@@ -1,7 +1,7 @@
 # AHQR - Android QR Code Application
 
 <p align="center">
-  <strong>A powerful Android QR code scanner and generator application</strong>
+  <strong>Android QR code scanner and generator application</strong>
 </p>
 
 ---
@@ -297,10 +297,6 @@ This project was developed as part of the Samsung R&D Vietnam Internship program
 - [ZXing](https://github.com/zxing/zxing) - QR code processing library
 - [Material Design Components](https://material.io/develop/android) - UI components
 - [Android Jetpack](https://developer.android.com/jetpack) - Architecture components
-- Samsung R&D Vietnam for the internship opportunity
 
 ---
 
-<p align="center">
-  Made with ❤️ in Vietnam
-</p>
