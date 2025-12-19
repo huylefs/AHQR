@@ -11,14 +11,12 @@
 - [Introduction](#introduction)
 - [Features](#features)
 - [Screenshots](#screenshots)
-- [Architecture](#architecture)
 - [Tech Stack](#tech-stack)
 - [Project Structure](#project-structure)
 - [Installation](#installation)
 - [Usage](#usage)
 - [QR Code Types Supported](#qr-code-types-supported)
 - [Team Members](#team-members)
-- [License](#license)
 
 ---
 
@@ -57,62 +55,7 @@ The app features a custom-built QR code generation engine implementing the QR Co
 
 ---
 
-## 🏗️ Architecture <a name="architecture"></a>
 
-The application follows the **MVVM (Model-View-ViewModel)** architecture pattern:
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│                         UI Layer                            │
-│  ┌─────────────────┐    ┌─────────────────────────────────┐ │
-│  │   Activities    │    │           Fragments             │ │
-│  │  - MainActivity │    │  - ScanFragment                 │ │
-│  │  - SplashActivity│   │  - GenerateFragment             │ │
-│  └─────────────────┘    └─────────────────────────────────┘ │
-└──────────────────────────────┬──────────────────────────────┘
-                               │
-┌──────────────────────────────▼──────────────────────────────┐
-│                      ViewModel Layer                        │
-│  ┌─────────────────────┐  ┌─────────────────────────────┐   │
-│  │   ScanViewModel     │  │   GenerateViewModel         │   │
-│  │  - decodeQRCode()   │  │  - generateQRCode()         │   │
-│  │  - insert/delete()  │  │  - saveQRCodeToLibrary()    │   │
-│  └─────────────────────┘  └─────────────────────────────┘   │
-└──────────────────────────────┬──────────────────────────────┘
-                               │
-┌──────────────────────────────▼──────────────────────────────┐
-│                       Data Layer                            │
-│  ┌─────────────────────────────────────────────────────────┐│
-│  │                   MyQRRepository                        ││
-│  │  - insert() / delete() / getAll()                       ││
-│  └─────────────────────────────┬───────────────────────────┘│
-│                                │                             │
-│  ┌─────────────────────────────▼───────────────────────────┐│
-│  │              Room Database (MyQRDatabase)               ││
-│  │  - MyQR Entity                                          ││
-│  │  - MyQRDao                                              ││
-│  └─────────────────────────────────────────────────────────┘│
-└─────────────────────────────────────────────────────────────┘
-
-┌─────────────────────────────────────────────────────────────┐
-│                    Utils/Generation Layer                   │
-│  ┌─────────────────────────────────────────────────────────┐│
-│  │                    QRCodeFacade                         ││
-│  │  - generateQRCode()                                     ││
-│  └─────────────────────────────┬───────────────────────────┘│
-│                                │                             │
-│  ┌───────────────┐  ┌──────────▼──────────┐  ┌────────────┐ │
-│  │QRCodeData     │  │QRErrorCorrection    │  │QRCodeModule││
-│  │Encoding       │  │Encoding             │  │Placement   ││
-│  └───────────────┘  └─────────────────────┘  └────────────┘ │
-│                                                              │
-│  ┌─────────────────────────────────────────────────────────┐│
-│  │                      QRVersion                          ││
-│  │  - Error Correction Levels (L, M, Q, H)                 ││
-│  │  - Version capacity tables                              ││
-│  └─────────────────────────────────────────────────────────┘│
-└─────────────────────────────────────────────────────────────┘
-```
 
 ---
 
@@ -285,13 +228,6 @@ The app requires the following permissions:
 *Samsung R&D Vietnam Internship Project*
 
 ---
-
-## 📄 License <a name="license"></a>
-
-This project was developed as part of the Samsung R&D Vietnam Internship program.
-
----
-
 ## 🙏 Acknowledgments
 
 - [ZXing](https://github.com/zxing/zxing) - QR code processing library
